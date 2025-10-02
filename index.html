@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成AI業務導入伴走支援サービスのご提案 - c-table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .slide {
+                page-break-after: always;
+                page-break-inside: avoid;
+                display: flex !important;
+                width: 297mm;
+                height: 210mm;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        @media screen {
+            body {
+                background: #1e293b;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                padding: 20px;
+            }
+
+            .slide-container {
+                width: 297mm;
+                height: 210mm;
+                position: relative;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            }
+
+            .slide {
+                display: none !important;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .slide.active {
+                display: flex !important;
+            }
+        }
+
+        .slide {
+            width: 297mm;
+            height: 210mm;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .qr-placeholder {
+            width: 120px;
+            height: 120px;
+            border: 2px dashed #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- スライド1: 表紙 -->
+        <div class="slide active flex items-center justify-center" data-slide="1">
+            <div class="text-center">
+                <h1 class="text-6xl font-bold text-gray-800 mb-8">生成AI業務導入伴走支援サービス<br>のご提案</h1>
+                <p class="text-3xl text-gray-600 mb-12">c-table</p>
+                <p class="text-2xl text-gray-500">2025年10月6日</p>
+            </div>
+            <div class="slide-number">1</div>
+        </div>
+
+        <!-- スライド2: 貴自治体の現状認識 -->
+        <div class="slide flex flex-col p-16" data-slide="2">
+            <h2 class="text-5xl font-bold text-gray-800 mb-8">貴自治体の現状認識</h2>
+
+            <div class="mb-8">
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">社会的背景</h3>
+                <p class="text-xl text-gray-700 leading-relaxed">近年、生成AIは急速に進化し、行政業務の効率化・高度化において重要なツールとなっている。先進的な自治体では既に導入が進んでおり、業務時間の削減や住民サービスの向上に成果を上げている</p>
+            </div>
+
+            <div>
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">貴自治体の現状</h3>
+                <ul class="text-xl text-gray-700 space-y-2">
+                    <li class="flex items-start"><span class="mr-3">•</span><span>プロジェクトチームによる試験的な取り組みが進行中</span></li>
+                    <li class="flex items-start"><span class="mr-3">•</span><span>試用ツール（ミネクト）の利用期間が間もなく終了</span></li>
+                    <li class="flex items-start"><span class="mr-3">•</span><span>プロジェクトチームメンバー以外は生成AIに触れる機会がない</span></li>
+                    <li class="flex items-start"><span class="mr-3">•</span><span>本格導入に向けた体制・ガバナンスが未整備</span></li>
+                </ul>
+                <p class="text-2xl font-bold text-red-600 mt-6">→ 来年度の本格導入に向けた準備が必要</p>
+            </div>
+
+            <div class="slide-number">2</div>
+        </div>
+
+        <!-- スライド3: 直面している3つの課題 -->
+        <div class="slide flex flex-col p-14" data-slide="3">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6">直面している3つの課題</h2>
+
+            <div class="space-y-4">
+                <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">1. 環境の未整備</h3>
+                    <p class="text-lg font-semibold text-red-600 mb-1">誰でも生成AIを活用できる環境になっていない</p>
+                    <ul class="text-base text-gray-700 space-y-0.5">
+                        <li class="flex items-start"><span class="mr-2">•</span><span>ミネクト利用期限が迫っている</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>本格導入に向けたツール選定・環境構築が未完了</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>セキュリティ要件（LG対応等）への対応が不明確</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">2. 発想の欠如</h3>
+                    <p class="text-lg font-semibold text-orange-600 mb-1">職員に定常業務でAIを活用して省力化できる発想がない</p>
+                    <ul class="text-base text-gray-700 space-y-0.5">
+                        <li class="flex items-start"><span class="mr-2">•</span><span>プロジェクトチーム以外は具体的な活用イメージが湧かない</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>「自分の業務には使えない」という先入観</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>どの業務にどう適用できるか分からない</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">3. 推進人材の不在</h3>
+                    <p class="text-lg font-semibold text-yellow-600 mb-1">伴走支援でAI活用（AIX）を進めていく人材がいない</p>
+                    <ul class="text-base text-gray-700 space-y-0.5">
+                        <li class="flex items-start"><span class="mr-2">•</span><span>プロジェクトチームの知見が限定的</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>各課の業務に精通しながらAI活用を支援できる人材不足</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>継続的な改善・展開を推進する体制が未整備</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="text-xl font-bold text-center text-gray-800 mt-4">この3つの課題を解決しなければ、本格導入は進まない</p>
+
+            <div class="slide-number">3</div>
+        </div>
+
+        <!-- スライド4: 本提案の目的 -->
+        <div class="slide flex flex-col p-14" data-slide="4">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">本提案の目的</h2>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-5">伴走支援を通じた自律的なAI活用体制の構築</h3>
+
+            <div class="space-y-4">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">1. 職員自身がAI活用の効果を実感する</h4>
+                    <ul class="text-base text-gray-700 space-y-1">
+                        <li class="flex items-start"><span class="mr-2">•</span><span>業務ヒアリングを通じて、各職員の業務にAIを適用</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>個人情報を扱わない業務から、順次difyでワークフロー化し実際に使用してもらう</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>実際の業務で省力化効果を体感</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>「自分の業務にも使える」という発見と納得</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">2. 職員が自らAIを使いこなせるようになる</h4>
+                    <ul class="text-base text-gray-700 space-y-1">
+                        <li class="flex items-start"><span class="mr-2">•</span><span>講習会とフォローアップで自立的な活用スキルを習得</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>カスタマイズや改善を職員自身ができるように</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">3. 現場主導でAI活用が広がる体制をつくる</h4>
+                    <ul class="text-base text-gray-700 space-y-1">
+                        <li class="flex items-start"><span class="mr-2">•</span><span>成功事例の横展開</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>職員同士で教え合える文化の醸成</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>継続的に進化していく仕組みの確立</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide-number">4</div>
+        </div>
+
+        <!-- スライド5: サービスの全体像 -->
+        <div class="slide flex flex-col p-14" data-slide="5">
+            <h2 class="text-4xl font-bold text-gray-800 mb-5">サービスの全体像</h2>
+
+            <div class="mb-5">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-3">3つの課題を2つの柱で解決</h3>
+                <div class="grid grid-cols-2 gap-3 mb-3">
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <p class="text-base"><span class="font-bold">課題①環境の未整備</span><br>→ <span class="text-blue-600">コンサルティング・相談支援</span></p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <p class="text-base"><span class="font-bold">課題②発想の欠如</span><br>→ <span class="text-blue-600">業務分析・ワークフロー化支援</span></p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-3 rounded-lg w-1/2">
+                    <p class="text-base"><span class="font-bold">課題③推進人材の不在</span><br>→ <span class="text-blue-600">外部専門家が伴走</span></p>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-3">2つの支援の柱</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-blue-600 text-white p-4 rounded-lg">
+                        <h4 class="text-xl font-bold mb-1">① コンサルティング・相談支援</h4>
+                        <p class="text-base">最新動向・技術支援、ツール選定、環境構築</p>
+                    </div>
+                    <div class="bg-green-600 text-white p-4 rounded-lg">
+                        <h4 class="text-xl font-bold mb-1">② 業務分析・ワークフロー化支援</h4>
+                        <p class="text-base">現場への実装・定着、職員のスキル育成</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold text-blue-600 mb-3">4つの特徴</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="flex items-center"><span class="text-lg mr-2">✓</span><span class="text-base">各課への徹底的なヒアリング</span></div>
+                    <div class="flex items-center"><span class="text-lg mr-2">✓</span><span class="text-base">効率化可能業務の見える化</span></div>
+                    <div class="flex items-center"><span class="text-lg mr-2">✓</span><span class="text-base">Difyを活用した実践的なワークフロー構築</span></div>
+                    <div class="flex items-center"><span class="text-lg mr-2">✓</span><span class="text-base">職員が自分で使いこなせるスキル育成</span></div>
+                </div>
+            </div>
+
+            <div class="mt-4 bg-gray-100 p-3 rounded-lg">
+                <p class="text-sm text-gray-700"><span class="font-bold">※Dify（ディファイ）とは：</span>プログラミング不要で業務に特化したAIアシスタントを構築できるオープンソースプラットフォーム</p>
+            </div>
+
+            <div class="slide-number">5</div>
+        </div>
+
+        <!-- スライド6: 支援の進め方 -->
+        <div class="slide flex flex-col p-14" data-slide="6">
+            <h2 class="text-4xl font-bold text-gray-800 mb-5">支援の進め方（3つのフェーズ）</h2>
+
+            <div class="space-y-4">
+                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">フェーズ1（3〜4ヶ月）：業務分析と可視化</h3>
+                    <ul class="text-base text-gray-700 space-y-1">
+                        <li class="flex items-start"><span class="mr-2">•</span><span>各課への詳細ヒアリング</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>効率化可能業務のリスト化</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>リストイメージ：<a href="https://docs.google.com/spreadsheets/d/1aC7en-be_3NiP9WEsEiWQ3uOrjHvtpTR/edit" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">サンプルシート</a></span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">フェーズ2（1ヶ月）：ロードマップ策定</h3>
+                    <ul class="text-base text-gray-700 space-y-1">
+                        <li class="flex items-start"><span class="mr-2">•</span><span>優先順位付け</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>年間実装スケジュール作成</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">フェーズ3（7〜8ヶ月）：ワークフロー構築と導入</h3>
+                    <ul class="text-base text-gray-700 space-y-1">
+                        <li class="flex items-start"><span class="mr-2">•</span><span>Difyでの実践的ワークフロー作成</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>Dify講習会実施（初級・中級・実践編）</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>導入支援とフォローアップ</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-4 bg-gray-800 text-white p-4 rounded-lg">
+                <p class="text-lg font-bold mb-2">契約期間：12ヶ月</p>
+                <div class="flex items-center space-x-3">
+                    <div class="flex-1 bg-blue-600 h-7 flex items-center justify-center rounded text-sm">フェーズ1（月1-4）</div>
+                    <div class="flex-shrink-0 bg-green-600 h-7 flex items-center justify-center rounded px-3 text-sm">フェーズ2（月5）</div>
+                    <div class="flex-1 bg-purple-600 h-7 flex items-center justify-center rounded text-sm">フェーズ3（月6-12）</div>
+                </div>
+            </div>
+
+            <div class="slide-number">6</div>
+        </div>
+
+        <!-- スライド7: 重点施策 -->
+        <div class="slide flex flex-col p-16" data-slide="7">
+            <h2 class="text-5xl font-bold text-gray-800 mb-8">重点施策：ワークフロー化支援の詳細</h2>
+
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-4">業務実態の徹底把握</h3>
+                    <ul class="text-lg text-gray-700 space-y-2">
+                        <li class="flex items-start"><span class="mr-2">•</span><span>各課へのヒアリングで業務実態を詳細に把握</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>時間を要している業務・負担の大きい業務を特定</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>AI活用による省力化ポイントを職員と一緒に発見</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-green-600 mb-4">段階的な実装</h3>
+                    <ul class="text-lg text-gray-700 space-y-2">
+                        <li class="flex items-start"><span class="mr-2">•</span><span>個人情報を扱わない業務から着手</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>Difyで各課に最適化したAIアシスタント構築</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>実業務で試用し、効果を実感</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-purple-50 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-purple-600 mb-4">自立支援</h3>
+                    <p class="text-lg text-gray-700 mb-3">講習会で職員自身がカスタマイズできるスキルを育成</p>
+                    <ul class="text-lg text-gray-700 space-y-2">
+                        <li class="flex items-start"><span class="mr-2">•</span><span><span class="font-bold">初級編</span>：基本操作</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span><span class="font-bold">中級編</span>：ワークフロー作成</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span><span class="font-bold">実践編</span>：業務への適用</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-orange-50 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-4">継続的改善</h3>
+                    <ul class="text-lg text-gray-700 space-y-2">
+                        <li class="flex items-start"><span class="mr-2">•</span><span>実業務での試行と改善サイクル</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>フォローアップによる定着支援</span></li>
+                        <li class="flex items-start"><span class="mr-2">•</span><span>職員自身が改善・カスタマイズできる状態へ</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide-number">7</div>
+        </div>
+
+        <!-- スライド8: 期待される効果 -->
+        <div class="slide flex flex-col p-14" data-slide="8">
+            <h2 class="text-4xl font-bold text-gray-800 mb-5">期待される効果</h2>
+
+            <div class="mb-5">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-3">短期的効果（1年目）</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="flex items-center bg-blue-50 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">各課の業務実態と効率化ポイントの明確化</span></div>
+                    <div class="flex items-center bg-blue-50 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">実践的ワークフローの構築</span></div>
+                    <div class="flex items-center bg-blue-50 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">職員の自律的AI活用スキル習得</span></div>
+                    <div class="flex items-center bg-blue-50 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base font-bold text-blue-600">優先業務で30〜60%の時間削減</span></div>
+                </div>
+                <p class="text-xs text-gray-600 mt-2">※文書作成・要約業務での実測値および他自治体での実績に基づく</p>
+            </div>
+
+            <div class="mb-5">
+                <h3 class="text-2xl font-semibold text-green-600 mb-3">中長期的効果（2〜3年目以降）</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="flex items-center bg-green-50 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">創造的業務への時間創出</span></div>
+                    <div class="flex items-center bg-green-50 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">住民サービスの質的向上</span></div>
+                    <div class="flex items-center bg-green-50 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">デジタル人材の育成</span></div>
+                    <div class="flex items-center bg-green-50 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">先進的な自治体としてのブランディング</span></div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold text-purple-600 mb-3">想定される業務効率化例</h3>
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-purple-600 text-white">
+                            <th class="border border-purple-700 p-2 text-left text-lg">業務種別</th>
+                            <th class="border border-purple-700 p-2 text-left text-lg">削減効果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-purple-50">
+                            <td class="border border-purple-200 p-2 text-base">文書作成業務</td>
+                            <td class="border border-purple-200 p-2 text-base font-bold">30〜40%削減</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="border border-purple-200 p-2 text-base">情報収集・要約</td>
+                            <td class="border border-purple-200 p-2 text-base font-bold">50〜60%削減</td>
+                        </tr>
+                        <tr class="bg-purple-50">
+                            <td class="border border-purple-200 p-2 text-base">定型業務自動化</td>
+                            <td class="border border-purple-200 p-2 text-base font-bold">70〜80%削減</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="slide-number">8</div>
+        </div>
+
+        <!-- スライド9: 費用 -->
+        <div class="slide flex flex-col p-16" data-slide="9">
+            <h2 class="text-5xl font-bold text-gray-800 mb-10">費用</h2>
+
+            <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-10 rounded-lg mb-8 text-center">
+                <h3 class="text-4xl font-bold mb-4">年間 180万円（税別）</h3>
+                <div class="text-2xl">
+                    <p class="mb-2"><span class="font-semibold">契約期間：</span>12ヶ月</p>
+                    <p><span class="font-semibold">月額換算：</span>15万円 × 12ヶ月</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-3xl font-semibold text-gray-800 mb-4">含まれるもの</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="flex items-center bg-gray-100 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">コンサルティング・相談対応</span></div>
+                    <div class="flex items-center bg-gray-100 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">業務ヒアリング・分析</span></div>
+                    <div class="flex items-center bg-gray-100 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">効率化可能業務リストの作成</span></div>
+                    <div class="flex items-center bg-gray-100 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">ロードマップ策定</span></div>
+                    <div class="flex items-center bg-gray-100 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">ワークフロー作成（Dify活用）</span></div>
+                    <div class="flex items-center bg-gray-100 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">講習会実施（初級・中級・実践編）</span></div>
+                    <div class="flex items-center bg-gray-100 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">導入支援・効果測定</span></div>
+                    <div class="flex items-center bg-gray-100 p-3 rounded"><span class="text-lg mr-2">✓</span><span class="text-base">定期報告・フォローアップ</span></div>
+                </div>
+            </div>
+
+            <div class="slide-number">9</div>
+        </div>
+
+        <!-- スライド10: 提案者の強み -->
+        <div class="slide flex flex-col p-14" data-slide="10">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6">提案者の強み</h2>
+
+            <div class="space-y-5">
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">実績</h3>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <p class="text-base flex items-center mb-2"><span class="text-lg mr-2">✓</span><span>都留市様向けの公式LINE基盤システム開発・導入実績</span></p>
+                        <p class="text-base flex items-center"><span class="text-lg mr-2">✓</span><span>自治体業務のデジタル化支援の豊富な経験</span></p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-green-600 mb-3">専門性</h3>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <p class="text-base flex items-center mb-2"><span class="text-lg mr-2">✓</span><span>最新AI技術動向への精通</span></p>
+                        <p class="text-base flex items-center mb-2"><span class="text-lg mr-2">✓</span><span>Difyを活用した実践的ワークフロー設計の経験</span></p>
+                        <p class="text-base flex items-center"><span class="text-lg mr-2">✓</span><span>現場業務の詳細分析とAI活用可能性の見極め力</span></p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-purple-600 mb-3">サポート体制</h3>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <p class="text-base flex items-center mb-2"><span class="text-lg mr-2">✓</span><span>継続的な伴走支援が可能</span></p>
+                        <p class="text-base flex items-center mb-2"><span class="text-lg mr-2">✓</span><span>急速に進化する技術への柔軟な対応</span></p>
+                        <p class="text-base flex items-center mb-2"><span class="text-lg mr-2">✓</span><span>他自治体事例の横展開</span></p>
+                        <p class="text-base flex items-center"><span class="text-lg mr-2">✓</span><span>導入後の改善サイクル支援</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-number">10</div>
+        </div>
+
+        <!-- スライド11: 次のステップ -->
+        <div class="slide flex flex-col p-14" data-slide="11">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6">次のステップ</h2>
+
+            <div class="mb-6">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-4">今後の流れ</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center bg-blue-50 p-3 rounded-lg">
+                        <div class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">1</div>
+                        <p class="text-lg font-semibold">本提案内容のご検討</p>
+                    </div>
+                    <div class="flex items-center bg-green-50 p-3 rounded-lg">
+                        <div class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">2</div>
+                        <p class="text-lg font-semibold">ご質問・ご要望のヒアリング</p>
+                    </div>
+                    <div class="flex items-center bg-purple-50 p-3 rounded-lg">
+                        <div class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">3</div>
+                        <p class="text-lg font-semibold">詳細実施計画・見積書の提出</p>
+                    </div>
+                    <div class="flex items-center bg-orange-50 p-3 rounded-lg">
+                        <div class="bg-orange-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">4</div>
+                        <p class="text-lg font-semibold">契約締結</p>
+                    </div>
+                    <div class="flex items-center bg-red-50 p-3 rounded-lg">
+                        <div class="bg-red-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">5</div>
+                        <p class="text-lg font-semibold">プロジェクト開始</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-lg text-center">
+                <p class="text-2xl font-bold mb-4">まずはお気軽にご相談ください</p>
+                <p class="text-3xl font-bold mb-3">c-table</p>
+                <div class="text-base space-y-1">
+                    <p>[連絡先]</p>
+                    <p>[メールアドレス]</p>
+                    <p>[電話番号]</p>
+                </div>
+            </div>
+
+            <div class="slide-number">11</div>
+        </div>
+    </div>
+
+    <!-- ナビゲーションコントロール -->
+    <div class="fixed top-8 right-8 flex space-x-3 no-print z-50">
+        <button id="prevBtn" class="bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg hover:bg-gray-100 transition font-semibold text-sm">前へ</button>
+        <button id="nextBtn" class="bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg hover:bg-gray-100 transition font-semibold text-sm">次へ</button>
+        <button id="printBtn" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition font-semibold text-sm">印刷</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            if (n > totalSlides) currentSlide = totalSlides;
+            if (n < 1) currentSlide = 1;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+        document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+        // キーボードナビゲーション
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // 初期表示
+        showSlide(1);
+    </script>
+</body>
+</html>
