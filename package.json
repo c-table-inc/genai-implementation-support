@@ -1,0 +1,11 @@
+{
+  "name": "presentation-checker",
+  "version": "1.0.0",
+  "description": "Check presentation slides layout",
+  "scripts": {
+    "check": "node check-slides.js"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  }
+}

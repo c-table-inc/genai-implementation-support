@@ -1,0 +1,8 @@
+# Node modules
+node_modules/
+
+# Playwright screenshots
+slide-*.png
+
+# npm debug log
+npm-debug.log*
