@@ -4,7 +4,9 @@
       "Read(//Users/spyder/Documents/Obsidian Vault/新規事業/生成AI導入コンサル/**)",
       "Bash(gh issue create:*)",
       "Bash(gh issue edit:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
