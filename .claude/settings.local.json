@@ -3,7 +3,8 @@
     "allow": [
       "Read(//Users/spyder/Documents/Obsidian Vault/新規事業/生成AI導入コンサル/**)",
       "Bash(gh issue create:*)",
-      "Bash(gh issue edit:*)"
+      "Bash(gh issue edit:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
