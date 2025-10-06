@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/spyder/Documents/Obsidian Vault/新規事業/生成AI導入コンサル/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
