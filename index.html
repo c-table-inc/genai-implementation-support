@@ -430,8 +430,158 @@
             <div class="slide-number">8</div>
         </div>
 
-        <!-- スライド8: 期待される効果 -->
-        <div class="slide flex flex-col p-14" data-slide="9">
+        <!-- スライド8-2: ワークフロー化支援の具体的内容 -->
+        <div class="slide flex flex-col p-10" data-slide="9">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">ワークフロー化支援の具体的内容</h2>
+
+            <!-- 上段: 解決プロセスと活用例 -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <!-- 左: 業務課題の解決プロセス -->
+                <div class="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="text-lg font-bold text-blue-600 mb-2">業務課題の解決プロセス（5ステップ）</h3>
+                    <div class="text-xs text-gray-700 space-y-1">
+                        <div class="bg-white p-2 rounded">
+                            <p class="font-bold">1. 各課から業務課題の共有</p>
+                            <p class="ml-2">月2回の実践ワークショップで持ち寄り</p>
+                        </div>
+                        <div class="bg-white p-2 rounded">
+                            <p class="font-bold">2. 課題の分析とAI活用可能性の検討</p>
+                            <p class="ml-2">業務特性分析、効果見込み試算</p>
+                        </div>
+                        <div class="bg-white p-2 rounded">
+                            <p class="font-bold">3. ワークフロー案の提示</p>
+                            <p class="ml-2">Difyでの実装イメージを提示</p>
+                        </div>
+                        <div class="bg-white p-2 rounded">
+                            <p class="font-bold">4. 削減効果の試算と優先順位付け</p>
+                            <p class="ml-2">ROIに基づく優先順位付け</p>
+                        </div>
+                        <div class="bg-white p-2 rounded">
+                            <p class="font-bold">5. アクションプランの策定</p>
+                            <p class="ml-2">実装スケジュール、担当者アサイン</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右: 想定される活用例 -->
+                <div class="bg-green-50 p-3 rounded-lg border-l-4 border-green-500">
+                    <h3 class="text-lg font-bold text-green-600 mb-2">想定される活用例（5つの課）</h3>
+                    <table class="w-full text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-green-600 text-white">
+                                <th class="border border-green-700 p-1 text-left">課</th>
+                                <th class="border border-green-700 p-1 text-left">業務例</th>
+                                <th class="border border-green-700 p-1 text-left">削減効果</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white">
+                                <td class="border border-green-200 p-1 font-bold">総務課</td>
+                                <td class="border border-green-200 p-1">議事録作成<br>定型文書生成</td>
+                                <td class="border border-green-200 p-1">67%<br>67%</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="border border-green-200 p-1 font-bold">企画課</td>
+                                <td class="border border-green-200 p-1">他自治体施策調査<br>報告書作成</td>
+                                <td class="border border-green-200 p-1">63%<br>63%</td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="border border-green-200 p-1 font-bold">市民課</td>
+                                <td class="border border-green-200 p-1">FAQ回答支援<br>制度説明資料</td>
+                                <td class="border border-green-200 p-1">67%<br>67%</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="border border-green-200 p-1 font-bold">財政課</td>
+                                <td class="border border-green-200 p-1">予算資料要約</td>
+                                <td class="border border-green-200 p-1">67%</td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="border border-green-200 p-1 font-bold">広報課</td>
+                                <td class="border border-green-200 p-1">広報紙記事作成<br>SNS投稿文作成</td>
+                                <td class="border border-green-200 p-1">63%<br>67%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="text-xs text-gray-600 mt-1">※他自治体実績および試算に基づく</p>
+                </div>
+            </div>
+
+            <!-- 下段: 講習会とフォローアップ -->
+            <div class="grid grid-cols-2 gap-4">
+                <!-- 左: 講習会の詳細プログラム -->
+                <div class="bg-purple-50 p-3 rounded-lg border-l-4 border-purple-500">
+                    <h3 class="text-lg font-bold text-purple-600 mb-2">講習会の詳細プログラム</h3>
+                    <div class="text-xs text-gray-700 space-y-1.5">
+                        <div>
+                            <p class="font-bold bg-purple-100 p-1 rounded">初級編（基本操作研修）</p>
+                            <ul class="ml-3 space-y-0.5">
+                                <li>• 対象: 全職員 / 時間: 2時間×2回</li>
+                                <li>• 第1回: 生成AI基礎、Dify基本操作、プロンプト演習</li>
+                                <li>• 第2回: 振り返り、業務活用演習、質疑応答</li>
+                                <li>• 到達目標: Difyの基本操作、簡単なプロンプトで業務活用</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold bg-purple-100 p-1 rounded">中級編（ワークフロー作成研修）</p>
+                            <ul class="ml-3 space-y-0.5">
+                                <li>• 対象: 推進担当者 / 時間: 3時間×2回</li>
+                                <li>• 第1回: ワークフロー設計、作成手順、グループ演習</li>
+                                <li>• 第2回: 振り返り、高度な機能、自部署業務演習</li>
+                                <li>• 到達目標: ワークフローを自分で設計・作成、エラー対応</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold bg-purple-100 p-1 rounded">実践編（業務適用トレーニング）</p>
+                            <ul class="ml-3 space-y-0.5">
+                                <li>• 対象: 推進担当者 / 時間: 2時間×3回（課ごと個別）</li>
+                                <li>• 第1-3回: 優先業務選定→実装・テスト→運用開始・効果測定</li>
+                                <li>• 到達目標: 業務運用、職員への展開・教育、効果測定と改善</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右: フォローアップ体制 -->
+                <div class="bg-orange-50 p-3 rounded-lg border-l-4 border-orange-500">
+                    <h3 class="text-lg font-bold text-orange-600 mb-2">フォローアップ体制</h3>
+                    <div class="text-xs text-gray-700 space-y-1.5">
+                        <div>
+                            <p class="font-bold bg-orange-100 p-1 rounded">オンライン相談窓口</p>
+                            <ul class="ml-3 space-y-0.5">
+                                <li>• 平日10:00-17:00対応</li>
+                                <li>• Slack/メール/Teamsでの質問受付</li>
+                                <li>• 24時間以内の回答を原則</li>
+                                <li>• 技術的質問、ワークフロー設計アドバイス、トラブル対応</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold bg-orange-100 p-1 rounded">講習会後の定期フォローアップ</p>
+                            <ul class="ml-3 space-y-0.5">
+                                <li>• 講習会後1週間: 個別フォロー（30分/課）</li>
+                                <li class="ml-4">実際の業務での活用状況確認、初期課題の解消</li>
+                                <li>• 講習会後1ヶ月: 進捗確認と課題解決（1時間/課）</li>
+                                <li class="ml-4">活用が進んでいる業務の深掘り、つまずき解決</li>
+                                <li>• その後: 月1回の定期訪問（各課30分）</li>
+                                <li class="ml-4">継続的な改善提案、新しい活用アイデアの共有</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold bg-orange-100 p-1 rounded">トラブル対応</p>
+                            <ul class="ml-3 space-y-0.5">
+                                <li>• 緊急時は即日対応</li>
+                                <li>• 月1回のトラブル事例共有会（全課合同）</li>
+                                <li class="ml-4">よくあるトラブルと対処法、ベストプラクティスの横展開</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-number">9</div>
+        </div>
+
+        <!-- スライド9: 期待される効果 -->
+        <div class="slide flex flex-col p-14" data-slide="10">
             <h2 class="text-4xl font-bold text-gray-800 mb-5">期待される効果</h2>
 
             <div class="mb-5">
@@ -481,11 +631,11 @@
                 </table>
             </div>
 
-            <div class="slide-number">9</div>
+            <div class="slide-number">10</div>
         </div>
 
-        <!-- スライド9: 費用 -->
-        <div class="slide flex flex-col p-16" data-slide="10">
+        <!-- スライド10: 費用 -->
+        <div class="slide flex flex-col p-16" data-slide="11">
             <h2 class="text-5xl font-bold text-gray-800 mb-10">費用</h2>
 
             <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-10 rounded-lg mb-8 text-center">
@@ -510,11 +660,11 @@
                 </div>
             </div>
 
-            <div class="slide-number">10</div>
+            <div class="slide-number">11</div>
         </div>
 
-        <!-- スライド10: 提案者の強み -->
-        <div class="slide flex flex-col p-14" data-slide="11">
+        <!-- スライド11: 提案者の強み -->
+        <div class="slide flex flex-col p-14" data-slide="12">
             <h2 class="text-4xl font-bold text-gray-800 mb-6">提案者の強み</h2>
 
             <div class="space-y-5">
@@ -546,11 +696,11 @@
                 </div>
             </div>
 
-            <div class="slide-number">11</div>
+            <div class="slide-number">12</div>
         </div>
 
-        <!-- スライド11: 次のステップ -->
-        <div class="slide flex flex-col p-14" data-slide="12">
+        <!-- スライド12: 次のステップ -->
+        <div class="slide flex flex-col p-14" data-slide="13">
             <h2 class="text-4xl font-bold text-gray-800 mb-6">次のステップ</h2>
 
             <div class="mb-6">
@@ -589,7 +739,7 @@
                 </div>
             </div>
 
-            <div class="slide-number">12</div>
+            <div class="slide-number">13</div>
         </div>
     </div>
 
